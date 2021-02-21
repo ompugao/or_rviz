@@ -32,7 +32,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QVariant>
 #include <QString>
 #include <OGRE/OgreSceneManager.h>
+#ifndef Q_MOC_RUN
 #include <boost/lexical_cast.hpp>
+#endif
 #include <pluginlib/class_list_macros.h>
 #include <rviz/display_context.h>
 #include "rviz/EnvironmentDisplay.h"

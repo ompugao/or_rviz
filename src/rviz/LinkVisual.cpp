@@ -29,7 +29,10 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 *************************************************************************/
+#ifndef Q_MOC_RUN
 #include <boost/make_shared.hpp>
+#include <boost/filesystem.hpp>
+#endif
 #include <OgreSceneNode.h>
 #include <OgreSceneManager.h>
 #include <OgreEntity.h>
@@ -44,7 +47,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <OgreMaterialManager.h>
 #include <OgreMaterial.h>
 #include <OgreMeshSerializer.h>
-#include <boost/filesystem.hpp>
 #include "rviz/Converters.h"
 #include "rviz/LinkVisual.h"
 #include "rviz/KinBodyVisual.h"

@@ -39,7 +39,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QTimer>
 #include <OgreRenderWindow.h>
 #include <OgreHardwarePixelBuffer.h>
+#ifndef Q_MOC_RUN
 #include <boost/format.hpp>
+#endif
 #include <rviz/display_group.h>
 #include <rviz/render_panel.h>
 #include <rviz/visualization_manager.h>

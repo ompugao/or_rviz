@@ -38,7 +38,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <rviz/default_plugin/interactive_marker_display.h>
 #include <rviz/visualization_frame.h>
 #include "rviz/EnvironmentDisplay.h"
+#ifndef Q_MOC_RUN
 #include "InteractiveMarkerViewer.h"
+#endif
 
 namespace or_rviz {
 

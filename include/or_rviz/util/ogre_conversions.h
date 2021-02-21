@@ -34,7 +34,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <OgrePose.h>
 #include <geometry_msgs/Pose.h>
+#ifndef Q_MOC_RUN
 #include <openrave/geometry.h>
+#endif
 
 namespace or_rviz {
 namespace util {

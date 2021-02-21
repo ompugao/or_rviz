@@ -29,12 +29,14 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 *************************************************************************/
+#ifndef Q_MOC_RUN
 #include <boost/bind.hpp>
 #include <boost/format.hpp>
 #include <boost/make_shared.hpp>
 #include <boost/algorithm/string/join.hpp>
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/range/adaptor/map.hpp>
+#endif
 #include <ros/ros.h>
 #include "markers/LinkMarker.h"
 #include "util/ros_conversions.h"

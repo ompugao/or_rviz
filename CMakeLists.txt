@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 2.4.6)
 project(or_rviz)
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 
+find_package(Boost REQUIRED COMPONENTS thread)
+include_directories(${Boost_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARY_DIRS})
+
 find_package(catkin REQUIRED COMPONENTS
     rviz
     geometry_msgs
@@ -10,8 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
     std_msgs
     visualization_msgs
 )
-include_directories(SYSTEM
-    ${catkin_INCLUDE_DIRS}
+include_directories(
+	${catkin_INCLUDE_DIRS}
     ${OpenRAVE_INCLUDE_DIRS}
 )
 link_directories(
@@ -19,12 +23,8 @@ link_directories(
     ${OpenRAVE_LIBRARY_DIRS}
 )
 
-find_package(Boost REQUIRED COMPONENTS thread)
-include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-link_directories(${Boost_LIBRARY_DIRS})
-
 find_package(OGRE REQUIRED)
-include_directories(SYSTEM ${OGRE_INCLUDE_DIRS})
+include_directories(${OGRE_INCLUDE_DIRS})
 link_directories(${OGRE_LIBRARY_DIRS})
 
 find_package(Qt4 COMPONENTS QtCore QtGui REQUIRED)
@@ -70,6 +70,7 @@ target_link_libraries(${PROJECT_NAME}_markers
 # RViz viewer plugins.
 qt4_wrap_cpp(RVIZ_MOC
     include/${PROJECT_NAME}/rviz/EnvironmentDisplay.h
+	OPTIONS -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED
 )
 
 add_library(${PROJECT_NAME}_rviz SHARED
@@ -80,6 +81,7 @@ add_library(${PROJECT_NAME}_rviz SHARED
 # OpenRAVE viewer classes.
 qt4_wrap_cpp(VIEWER_MOC
     include/${PROJECT_NAME}/RVizViewer.h
+	OPTIONS -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED
 )
 
 add_library(${PROJECT_NAME} SHARED
