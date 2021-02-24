@@ -407,6 +407,9 @@ void RVizViewer::EnvironmentSyncSlot()
 }
 
 
+void RVizViewer::setStatus(const QString& message) {
+    ::rviz::VisualizationFrame::setStatus(message);
+}
 /*
  * Private
  */

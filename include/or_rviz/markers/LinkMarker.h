@@ -39,10 +39,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     #include <boost/unordered_map.hpp>
     #include <boost/shared_ptr.hpp>
     #include <openrave/openrave.h>
+    #include <interactive_markers/menu_handler.h>
+    #include <interactive_markers/interactive_marker_server.h>
 #endif
 #include <visualization_msgs/InteractiveMarker.h>
-#include <interactive_markers/menu_handler.h>
-#include <interactive_markers/interactive_marker_server.h>
 
 namespace or_rviz {
 namespace markers {

@@ -5,8 +5,8 @@
 #ifndef Q_MOC_RUN
     #include <boost/function.hpp>
     #include <openrave/openrave.h>
+    #include <interactive_markers/interactive_marker_server.h>
 #endif
-#include <interactive_markers/interactive_marker_server.h>
 
 namespace or_rviz {
 namespace util {

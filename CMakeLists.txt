@@ -80,13 +80,14 @@ add_library(${PROJECT_NAME}_rviz SHARED
 
 # OpenRAVE viewer classes.
 qt4_wrap_cpp(VIEWER_MOC
-    include/${PROJECT_NAME}/RVizViewer.h
+    #include/${PROJECT_NAME}/RVizViewer.h
+    include/${PROJECT_NAME}/InteractiveMarkerViewer.h
 	OPTIONS -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED
 )
 
 add_library(${PROJECT_NAME} SHARED
     src/InteractiveMarkerViewer.cpp
-    src/RVizViewer.cpp
+    #src/RVizViewer.cpp
     ${VIEWER_MOC}
 )
 target_link_libraries(${PROJECT_NAME}

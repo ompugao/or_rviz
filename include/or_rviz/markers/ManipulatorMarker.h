@@ -36,8 +36,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef Q_MOC_RUN
     #include <boost/unordered_map.hpp>
     #include <openrave/openrave.h>
+    #include <interactive_markers/interactive_marker_server.h>
 #endif
-#include <interactive_markers/interactive_marker_server.h>
 #include "LinkMarker.h"
 #include "JointMarker.h"
 

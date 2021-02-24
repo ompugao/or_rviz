@@ -37,7 +37,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ros/ros.h>
 #include <openrave/plugin.h>
 #include "InteractiveMarkerViewer.h"
-#include "RVizViewer.h"
+//#include "RVizViewer.h"
 
 static std::string const kDefaultTopicName = "openrave";
 
@@ -75,14 +75,14 @@ InterfaceBasePtr CreateInterfaceValidated(
 
         if (interfacename == "interactivemarker") {
             return boost::make_shared<InteractiveMarkerViewer>(env, kDefaultTopicName);
-        } else if (interfacename == "rviz") {
-            // Use one, global QApplication for all or_rviz windows.
-            // TODO: Does this need to be re-created if the viewer is closed?
-            if (!qt_application) {
-                qt_application =  new QApplication(qt_argc, qt_argv);
-            }
-            
-            return boost::make_shared<RVizViewer>(env, kDefaultTopicName, true);
+        // } else if (interfacename == "rviz") {
+        //     // Use one, global QApplication for all or_rviz windows.
+        //     // TODO: Does this need to be re-created if the viewer is closed?
+        //     if (!qt_application) {
+        //         qt_application =  new QApplication(qt_argc, qt_argv);
+        //     }
+        //     
+        //     return boost::make_shared<RVizViewer>(env, kDefaultTopicName, true);
         } else {
             // This should never happen.
             BOOST_ASSERT(false);
@@ -95,7 +95,7 @@ InterfaceBasePtr CreateInterfaceValidated(
 
 void GetPluginAttributesValidated(PLUGININFO &info)
 {
-    info.interfacenames[OpenRAVE::PT_Viewer].push_back("RViz");
+    //info.interfacenames[OpenRAVE::PT_Viewer].push_back("RViz");
     info.interfacenames[OpenRAVE::PT_Viewer].push_back("InteractiveMarker");
 }
 

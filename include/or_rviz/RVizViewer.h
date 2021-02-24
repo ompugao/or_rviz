@@ -94,10 +94,25 @@ public:
                         OpenRAVE::RaveTransform<float> const &t,
                         OpenRAVE::SensorBase::CameraIntrinsics const &intrinsics);
 
+    // avoid non-virtual thunk to ...
+    // see:
+    // - https://reverseengineering.stackexchange.com/questions/4543/what-is-a-non-virtual-thunk
+    // - http://web.archive.org/web/20131210001207/http://thomas-sanchez.net/computer-sciences/2011/08/15/what-every-c-programmer-should-know-the-hard-part/
+    QWidget* getParentWindow() override {
+        return ::rviz::VisualizationFrame::getParentWindow();
+    }
+    ::rviz::PanelDockWidget* addPane(const QString& name,
+            QWidget* panel,
+            Qt::DockWidgetArea area = Qt::LeftDockWidgetArea,
+            bool floating = true) override {
+        return ::rviz::VisualizationFrame::addPane(name, panel, area, floating);
+    }
 public Q_SLOTS:
     void LoadEnvironmentSlot();
     void EnvironmentSyncSlot();
 
+    // avoid non-virtual thunk to ...
+    void setStatus(const QString& message) override;
 private:
     ::rviz::VisualizationManager *rviz_manager_;
     ::rviz::RenderPanel *rviz_main_panel_;
