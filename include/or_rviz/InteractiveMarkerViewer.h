@@ -73,6 +73,10 @@ public:
         // Unimplemented in this viewer
     }
 
+    virtual void SetBkgndColor(const OpenRAVE::RaveVector<float>& color) {
+        // Unimplemented in this viewer
+    }
+
     virtual OpenRAVE::UserDataPtr RegisterItemSelectionCallback(
         OpenRAVE::ViewerBase::ItemSelectionCallbackFn const &fncallback);
     virtual OpenRAVE::UserDataPtr RegisterViewerThreadCallback(
